@@ -8,4 +8,27 @@
 
 <!-- New Pizza form will go here -->
 
+<table class="table mt-5">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Size</th>
+            <th scope="col">Gluten Free</th>
+            <th scope="col">Delte</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pizza in Model.PizzaList)
+        {
+            <tr>
+                <td>@pizza.Name</td>
+                <td>@($"{pizza.Price:C}")</td>
+                <td>@pizza.Size</td>
+                <td>@pizza.IsGlutenFree ? "✔️" :</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
 <!-- List of Pizzas will go here -->
